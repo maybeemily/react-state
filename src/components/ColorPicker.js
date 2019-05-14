@@ -7,27 +7,29 @@ export default class ColorPicker extends PureComponent {
   };
 
   state = {
-    divBackground: 'white'
-  }
-
-  clickHandler = () => {
-    this.setState = { divBackground: this.state.color };
+    divBackground: 'grey'
   };
 
-  
+  clickHandler = color => {
+    this.setState({ divBackground: color }, () => {
+      console.log(color);
+    });
+  };
 
   render() {
-    const buttons = colors.map(color => {
+    const buttons = this.props.colors.map(color => {
       return (
-        <button key={color} style={{ backgroundColor: color, height: '100px', width: '100px' }} onClick={clickHandler}>{color}</button>
+        <button key={color} style={{ background: color, height: '100px', width: '100px' }} onClick={this.clickHandler.bind(null, color)}>{color}</button> //or onClick = {()=>this.clickHandler(color)}
       );
     });
+
+    const backgroundColor = this.state.divBackground;
+
     return (
       <>
       { buttons }
-      <div></div>
+      <div style={{ background: backgroundColor, height: '100px', width: '100px' }}>your chosen color</div>
       </>
     );
   }
-  
 }

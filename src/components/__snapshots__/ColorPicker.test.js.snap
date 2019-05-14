@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Color Picker tests renders the color picker 1`] = `
+<Fragment>
+  <button
+    key="red"
+    onClick={[Function]}
+    style={
+      Object {
+        "backgroundColor": "red",
+        "height": "100px",
+        "width": "100px",
+      }
+    }
+  >
+    red
+  </button>
+  <button
+    key="blue"
+    onClick={[Function]}
+    style={
+      Object {
+        "backgroundColor": "blue",
+        "height": "100px",
+        "width": "100px",
+      }
+    }
+  >
+    blue
+  </button>
+  <button
+    key="yellow"
+    onClick={[Function]}
+    style={
+      Object {
+        "backgroundColor": "yellow",
+        "height": "100px",
+        "width": "100px",
+      }
+    }
+  >
+    yellow
+  </button>
+  <div />
+</Fragment>
+`;

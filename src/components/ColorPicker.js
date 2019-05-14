@@ -19,7 +19,7 @@ export default class ColorPicker extends PureComponent {
   render() {
     const buttons = this.props.colors.map(color => {
       return (
-        <button key={color} style={{ background: color, height: '100px', width: '100px' }} onClick={this.clickHandler.bind(null, color)}>{color}</button> //or onClick = {()=>this.clickHandler(color)}
+        <button key={color} style={{ background: color, height: '100px', width: '100px' }} onClick={this.clickHandler.bind(null, color)}>{color}</button>
       );
     });
 

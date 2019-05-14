@@ -7,7 +7,7 @@ exports[`Color Picker tests renders the color picker 1`] = `
     onClick={[Function]}
     style={
       Object {
-        "backgroundColor": "red",
+        "background": "red",
         "height": "100px",
         "width": "100px",
       }
@@ -20,7 +20,7 @@ exports[`Color Picker tests renders the color picker 1`] = `
     onClick={[Function]}
     style={
       Object {
-        "backgroundColor": "blue",
+        "background": "blue",
         "height": "100px",
         "width": "100px",
       }
@@ -33,7 +33,7 @@ exports[`Color Picker tests renders the color picker 1`] = `
     onClick={[Function]}
     style={
       Object {
-        "backgroundColor": "yellow",
+        "background": "yellow",
         "height": "100px",
         "width": "100px",
       }
@@ -41,6 +41,16 @@ exports[`Color Picker tests renders the color picker 1`] = `
   >
     yellow
   </button>
-  <div />
+  <div
+    style={
+      Object {
+        "background": "grey",
+        "height": "100px",
+        "width": "100px",
+      }
+    }
+  >
+    your chosen color
+  </div>
 </Fragment>
 `;

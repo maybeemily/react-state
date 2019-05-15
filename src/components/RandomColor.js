@@ -33,7 +33,7 @@ export default class RandomColor extends PureComponent {
   render() {
     const { color, img } = this.state;
     const style = {
-      background: img ? `contain url(${img})` : color,
+      background: img ? `center / contain url(${img})` : color,
       width: '500px',
       height: '500px'
     };

@@ -1,26 +1,26 @@
-import React, { PureComponent } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 
-export default class ColorPicker extends PureComponent {
-  static propTypes = {
-    colors: PropTypes.array.isRequired
-  };
+function ColorPicker({ colorArray, selectColor }) {
 
-
-  render() {
-    const buttons = this.props.colors.map(color => {
-      return (
-        <button key={color} style={{ background: color, height: '75px', width: '75px' }}>{color}</button>
-      );
-    });
+  const buttons = colorArray.map(color => {
     return (
+      <button key={color} style={{ background: color, height: '75px', width: '75px' }} onClick={selectColor.bind(null, color)}> {color}</button>
+    );
+  });
+  return (
       <>
       { buttons }
       </>
-    );
-  }
-
+  );
 }
+
+ColorPicker.propTypes = {
+  colorArray: PropTypes.array.isRequired,
+  selectColor: PropTypes.func.isRequired
+};
+
+export default ColorPicker;
 
 //color lives in app, the parent of both picker and display. state lives in the app, along with update color
 //pass function as a prop to color picker

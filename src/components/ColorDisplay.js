@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 export default function ColorDisplay({ color }) {
   return (
-    <div style={{ backgroundColor: color }}>{color}</div>
+    <div style={{ backgroundColor: color, height: '75px', width: '75px' }}>{color}</div>
   );
 }
 

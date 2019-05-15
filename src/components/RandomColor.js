@@ -4,6 +4,7 @@ export default class RandomColor extends PureComponent {
   state = {
     color: '',
     trigger: new Date(),
+    img: ''
   };
 
   randomColor = () => {
@@ -15,8 +16,14 @@ export default class RandomColor extends PureComponent {
 
   componentDidMount() {
     this.intervalId = setInterval(() => {
-      this.setState({ color: this.randomColor(), trigger: new Date() });
+      this.setState({ color: this.randomColor(), trigger: new Date(), img: '' });
     }, 500);
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if(prevState.color === this.state.color) {
+      this.setState({ img: 'https://pics.me.me/damn-im-cute-memes-com-13844896.png' });
+    }
   }
 
   componentWillUnmount() {
@@ -24,9 +31,9 @@ export default class RandomColor extends PureComponent {
   }
 
   render() {
-    const { color } = this.state;
+    const { color, img } = this.state;
     const style = {
-      background: color,
+      background: img ? `contain url(${img})` : color,
       width: '500px',
       height: '500px'
     };
